@@ -27,7 +27,7 @@ def check_keydown_events(event, ai_settings, stats, screen, ship, bullets, alien
 
     elif event.key == pygame.K_p and stats.game_active:
         pause_game(stats)
-
+        
     elif event.key == pygame.K_q:
         sys.exit()
 
