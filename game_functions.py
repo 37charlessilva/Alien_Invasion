@@ -25,6 +25,9 @@ def check_keydown_events(event, ai_settings, stats, screen, ship, bullets, alien
         # Inicia o jogo
         start_game(ai_settings, screen, stats, ship, aliens, bullets)
 
+    elif event.key == pygame.K_p and stats.game_active:
+        pause_game(stats)
+
     elif event.key == pygame.K_q:
         sys.exit()
 
@@ -75,6 +78,13 @@ def start_game(ai_settings, screen, stats, ship, aliens, bullets):
     # Cria um nova frota e centraliza a espaçonave
     create_fleet(ai_settings, screen, ship, aliens)
     ship.center_ship()
+
+def pause_game(stats):
+    # Criar um menu
+    if stats.game_pause:
+        stats.game_pause = False
+    else:
+        stats.game_pause = True
 
 
 def check_play_button(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, mouse_x, mouse_y):

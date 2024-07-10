@@ -8,6 +8,7 @@ class GameStats:
 
         # inicia o jogo em estado inativo
         self.game_active = False
+        self.game_pause = False
 
         # A pontuação máxima jamais deverá ser reiniciada
         self.high_score = 0
